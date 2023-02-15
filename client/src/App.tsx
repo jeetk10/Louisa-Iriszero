@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import getNews from "./api";
+import Header from "./Components/Header";
 
 function App() {
   const [data, setData] = useState([]);
@@ -11,7 +12,11 @@ function App() {
     })();
   }, []);
 
-  return <div>App</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
