@@ -1,20 +1,17 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Container, Heading } from "@chakra-ui/react";
 
 function Header() {
   return (
     <Box
-      bg="#0a64c4"
-      fontFamily="monospace"
       bgGradient="linear(to-l, blue.500, blue.300)"
-      boxShadow="lg"
-      position="absolute"
+      pos="absolute"
       w="100%"
-      p={2}
+      p="2"
+      boxShadow="lg"
       color="white"
-      fontSize={35}
       textAlign="center"
     >
-      TWEET GENERATOR
+      <Heading>TWEET GENERATOR</Heading>
     </Box>
   );
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
+import "@fontsource/montserrat-alternates";
+import AppTheme from "./AppTheme";
 import App from "./App";
 import "./index.css";
 
