@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
   {
     "title_of_article": "As U.S. budget fight looms, Republicans flip their fiscal script",
     "search_query": "\"U.S. Federal Budget  -filter:retweets\" and \"Republican Fiscal Policy -filter:retweets\"",
@@ -88,3 +89,140 @@
     ]
   }
 ]
+=======
+    [
+        [
+            {
+                "title_of_article": "As U.S. budget fight looms, Republicans flip their fiscal script", 
+                "tweets": [
+                {
+                    "search_queries_tweepy": "\n\nTax Cuts  Government Spending", 
+                    "tweet_content": "@HenricCont @edj635562 @jbhearn You seem not to appreciate that reserve issuance *is* CB lending, and that for the\u2026 https://t.co/XNQKfaEIfV", 
+                    "tweet_url": "https://twitter.com/twitter/statuses/1626540468514193408", 
+                    "tweet_retweetcount": "0", 
+                    "tweet_likecount": "0", 
+                    "tweet_score": 0.0
+                }, 
+                {
+                    "search_queries_tweepy": "\n\nTax Cuts  Government Spending", 
+                    "tweet_content": "@LilyDAmbrosioMP Extreme heat\u2026 more like extreme stupidity! Government failing to invest in true infrastructure whi\u2026 https://t.co/2f0NkHtfQW", 
+                    "tweet_url": "https://twitter.com/twitter/statuses/1626540260107902976", 
+                    "tweet_retweetcount": "0", 
+                    "tweet_likecount": "0", 
+                    "tweet_score": 0.0
+                }, 
+                {
+                    "search_queries_tweepy": "\n\nTax Cuts  Government Spending",
+                    "tweet_content": "#\u0627\u0644\u0679\u06cc_\u0645\u06cc\u0679\u064572\u06af\u06be\u0646\u0679\u0648\u06ba_\u06a9\u0627 \nThe government should end its royal spending!If the protocol given to Maryam Nawaz is termin\u2026 https://t.co/wNd7d1cMxQ", 
+                    "tweet_url": "https://twitter.com/twitter/statuses/1626539732196032512", 
+                    "tweet_retweetcount": "4", 
+                    "tweet_likecount": "3", 
+                    "tweet_score": 0.036000000000000004
+                }
+                ]
+            }
+        ]
+    ], 
+    [
+        [
+            {
+                "title_of_article": "U.S. military to accept transgender recruits on Monday: Pentagon", 
+                "tweets": [
+                    {
+                        "search_queries_tweepy": "\n\nTransgender Rights  U.S. Military", 
+                        "tweet_content": "Top U.S. General: Ukraine War Will End at Negotiating Table\n\nGeneral Mark Milley said neither Moscow nor Kyiv looks\u2026 https://t.co/en4SsjVlnG", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626539793575292930", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "0", 
+                        "tweet_score": 0.0
+                    }, 
+                    {
+                        "search_queries_tweepy": "\n\nTransgender Rights  U.S. Military", 
+                        "tweet_content": "Solution to Homelessness and Poverty\nminimum safety net:\nU.S. military refugee style camps for anyone who:\n-wants 3\u2026 https://t.co/7Mp8EoLBo8", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626539643801047045", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "0", 
+                        "tweet_score": 0.0
+                    }, 
+                    {
+                        "search_queries_tweepy": "\n\nTransgender Rights  U.S. Military", 
+                        "tweet_content": "Analyst: U.S. military space budget likely to get another boost in 2024 https://t.co/dNSp76qwgs", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626539476108382220", 
+                        "tweet_retweetcount": "1", 
+                        "tweet_likecount": "1", 
+                        "tweet_score": 0.01
+                    }
+                ]
+            }
+        ]
+    ], 
+    [
+        [
+            {
+                "title_of_article": "Senior U.S. Republican senator: 'Let Mr. Mueller do his job'", 
+                "tweets": [
+                    {
+                        "search_queries_tweepy": "\n\nU.S. Politics  Special Counsel Investigation", 
+                        "tweet_content": "If @RepScottPerry (and other members of Congress) has nothing to hide re: January 6th, we would not be seeing the l\u2026 https://t.co/j0Wqk0OBFJ", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626519486030581760", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "0", 
+                        "tweet_score": 0.0
+                    }, 
+                    {
+                        "search_queries_tweepy": "\n\nU.S. Politics  Special Counsel Investigation", 
+                        "tweet_content": "Subpoenas to Meadows and Pence. Eight secret court cases. The special counsel is not messing around https://t.co/GA4rjsadMH", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626499829189816320", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "1", 
+                        "tweet_score": 0.004
+                    }, 
+                    {
+                        "search_queries_tweepy": "\n\nU.S. Politics  Special Counsel Investigation", 
+                        "tweet_content": "Exclusive: Trump lawyer hires own attorney in classified documents probe https://t.co/Vb1Q6y4qbg via @YahooNews Cor\u2026 https://t.co/b3NXLjA1iC", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626494811745452032", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "0", 
+                        "tweet_score": 0.0
+                    }
+                ]
+            }
+        ]
+    ], 
+    [
+        [
+            {
+                "title_of_article": "FBI Russia probe helped by Australian diplomat tip-off: NYT", 
+                "tweets": [
+
+                ]
+            }
+        ]
+    ], 
+    [
+        [
+            {
+                "title_of_article": "Trump wants Postal Service to charge 'much more' for Amazon shipments", 
+                "tweets": [
+                    {
+                        "search_queries_tweepy": "\n\nTrump  Postal Service", 
+                        "tweet_content": "Two alleged reptile smugglers out on bail\n\nStaff members at a Pretoria postal service store got the shock of their\u2026 https://t.co/9JjPvV5Cel", 
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626538196770209795", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "0", 
+                        "tweet_score": 0.0
+                    }, 
+                    {
+                        "search_queries_tweepy": "\n\nTrump  Postal Service", 
+                        "tweet_content": "Such Great Heights by The Postal Service https://t.co/5f6EoTAVzI",
+                        "tweet_url": "https://twitter.com/twitter/statuses/1626538081355538432", 
+                        "tweet_retweetcount": "0", 
+                        "tweet_likecount": "0", 
+                        "tweet_score": 0.0
+                    }
+                ]
+            }
+        ]
+    ]
+]
+>>>>>>> 4fb19ccfb74ed23c6d8bcd0e20485c1aada4db2a
