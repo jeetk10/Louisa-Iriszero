@@ -1,4 +1,5 @@
 import openai
+import time
 import tweepy
 import os
 import re
@@ -25,13 +26,14 @@ twitter_api = tweepy.API(auth, wait_on_rate_limit=True)
 with open(os.path.join(os.path.dirname(__file__), "./data/news.json")) as f:
     dtset = json.load(f)
 
+# print(len(dtset))
 
 # looping through each article
 final_data = []
 pattern = re.compile(r"\d+\.\s*(.*)")  # matches one or more digits followed by a period, optionally followed by
 # whitespace (the \s*), and then captures any character except a newline in a group (the (.*)).
 
-for ix in range(3):
+for ix in range(500):
     prompt = """Give 2 most relevant topics based on
      following news headline: {}""".format(
         dtset[ix]["title"]
@@ -57,7 +59,10 @@ for ix in range(3):
     # recent_tweets = twitter_api.search_tweets(q=query_string_noRetweets, count=3)
     recent_tweets = tweepy.Cursor(
         twitter_api.search_tweets, q=query_string_noRetweets, tweet_mode="extended", include_entities=True
-    ).items(3)
+    ).items(
+        8
+    )  # get 8 tweets per article
+
     # print(recent_tweets)
 
     tweet_json_data = {"title_of_article": dtset[ix]["title"], "search_query": query_string, "tweets": []}
@@ -112,7 +117,9 @@ for ix in range(3):
             )
 
     final_data.append(tweet_json_data)
+    time.sleep(2)
+
 
 # writing the tweets into a json file
-with open("./data/tweets1.json", "w") as json_file:
+with open("./data/tweets.json", "w") as json_file:
     json.dump(final_data, json_file)

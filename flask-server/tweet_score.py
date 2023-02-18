@@ -17,10 +17,13 @@ def find_score(
     news_date,
 ):
     # preprocess the tweet and news text
-    if hashtags:
-        tweet_text = user_description + " " + tweet_full_text + " " + " ".join(str(x) for x in hashtags.values())
-    else:
-        tweet_text = user_description + " " + tweet_full_text
+
+    # Issue: hashtags is sometimes a dictionary and sometimes a list
+    # if hashtags:
+    #     tweet_text = user_description + " " + tweet_full_text + " " + " ".join(str(x) for x in hashtags.values())
+    # else:
+    #     tweet_text = user_description + " " + tweet_full_text
+    tweet_text = user_description + " " + tweet_full_text
     news_text = news_title + " " + news_text
 
     # convert tweet and news text to a TF-IDF representation
