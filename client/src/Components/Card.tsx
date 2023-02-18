@@ -1,7 +1,6 @@
-import {Card} from "@chakra-ui/react";
+import {Card, IconButton} from "@chakra-ui/react";
 import {Avatar, Box, CardBody, CardHeader, Flex, Heading,Text } from "@chakra-ui/react";
 import React from "react";
-
 
 const Cards=(props: { 
     userName: string | undefined,
@@ -10,8 +9,8 @@ const Cards=(props: {
     )=>{
 
     return (
-        <div>
-            <Card maxW='md' margin="20">
+        <div id="root">
+            <Card maxW='md' margin="10">
                 <CardHeader>
                     <Flex>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
@@ -20,6 +19,7 @@ const Cards=(props: {
                             <Box>
                                 <Heading size='sm'>{props.userName}</Heading>
                             </Box>
+                            
                         </Flex>
                     </Flex>
                 </CardHeader>

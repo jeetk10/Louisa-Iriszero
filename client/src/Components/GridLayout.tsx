@@ -3,22 +3,29 @@ import { Box, Container } from "@chakra-ui/react";
 import { Card, CardHeader, CardBody, CardFooter,Flex,Avatar,Heading,Text,IconButton,Image} from '@chakra-ui/react'
 import data from '../../../flask-server/data/tweets.json';
 import Cards from '../Components/Card'
+
 const GridLayout = () => {
  
 
   return (
     
-    data.map( records=>{
+    data && data.map( records=>{
       return(
-        records.map(innerData=>{
+        records && records.map(innerData=>{
           return(
-          innerData.map(x=>{
+          innerData && innerData.map(x=>{
             return(
-              x.tweets.map(content=>{
+              <Box>
+              <Heading colorScheme={"whiteAlpha"} >{x.title_of_article}</Heading>
+              <SimpleGrid spacing={4}>
+              {x.tweets && x.tweets.map(content=>{
                 return(
-                <Cards userName="Team Iris_Zero" tweetContent={content.tweet_content}/>
+                <><Cards userName="Team Iris_Zero" tweetContent={content.tweet_content} /><div id="root"></div></>
                 )
               })
+            }
+              </SimpleGrid >
+            </Box>
             )
         })
           )

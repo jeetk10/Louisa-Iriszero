@@ -23,7 +23,7 @@ function App() {
 
   return (
     <Box w="100%" position="absolute">
-      <Header />
+      {/* <Header /> */}
       <GridLayout />
     </Box>
   );
