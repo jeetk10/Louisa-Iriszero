@@ -5,12 +5,18 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-data = json.load(open("./data/news.json"))
+news_data = json.load(open("./data/news.json"))
+tweet_data = json.load(open("./data/tweets.json"))
 
 
 @app.route("/news")
 def news():
-    return data
+    return news_data
+
+
+@app.route("/tweets")
+def tweets():
+    return tweet_data
 
 
 if __name__ == "__main__":
