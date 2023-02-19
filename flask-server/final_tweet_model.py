@@ -23,7 +23,8 @@ twitter_api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # dtset = pd.read_json(os.path.join(os.path.dirname(__file__), "./data/news.json"))
 # queries = dtset.loc[:, "title"]
-with open(os.path.join(os.path.dirname(__file__), "./data/news.json")) as f:
+# with open(os.path.join(os.path.dirname(__file__), "./data/news.json")) as f:
+with open("./data/news.json") as f:
     dtset = json.load(f)
 
 # print(len(dtset))
@@ -58,7 +59,7 @@ for ix in range(10):
 
     query_string = " OR ".join(f'"{term}"' for term in query_array)
 
-    query_string_noRetweets = f"{query_string} -filter:retweets"
+    query_string_noRetweets = f"{query_string} -filter:retweets -filter:replies"
 
     # print(query_string_noRetweets)
     # query_expression = ast.parse(query_string, mode="eval").body
@@ -95,6 +96,7 @@ for ix in range(10):
             user = {
                 "name": tweet.user.name,
                 "screen_name": tweet.user.screen_name,
+                "profile_image_url": tweet.user.profile_image_url,
                 "location": tweet.user.location,
                 "description": tweet.user.description,
                 "friends": tweet.user.friends_count,
@@ -133,7 +135,7 @@ for ix in range(10):
             )
 
     final_data.append(tweet_json_data)
-    time.sleep(5)
+    time.sleep(1)
 
 
 # writing the tweets into a json file
