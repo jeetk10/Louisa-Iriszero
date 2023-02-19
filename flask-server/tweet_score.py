@@ -19,10 +19,10 @@ def find_score(
     # preprocess the tweet and news text
 
     # Issue: hashtags is sometimes a dictionary and sometimes a list
-    # if hashtags:
+    # if type(hashtags) is dict:
     #     tweet_text = user_description + " " + tweet_full_text + " " + " ".join(str(x) for x in hashtags.values())
     # else:
-    #     tweet_text = user_description + " " + tweet_full_text
+    #     tweet_text = user_description + " " + tweet_full_text + " " + " ".join(hashtags)
     tweet_text = user_description + " " + tweet_full_text
     news_text = news_title + " " + news_text
 

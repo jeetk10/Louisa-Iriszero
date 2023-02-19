@@ -33,7 +33,8 @@ final_data = []
 pattern = re.compile(r"\d+\.\s*(.*)")  # matches one or more digits followed by a period, optionally followed by
 # whitespace (the \s*), and then captures any character except a newline in a group (the (.*)).
 
-for ix in range(500):
+
+for ix in range(10):
     prompt = """Give 2 most relevant topics based on
      following news headline: {}""".format(
         dtset[ix]["title"]
@@ -93,6 +94,7 @@ for ix in range(500):
         if tweet.full_text and url_of_tweet:
             user = {
                 "name": tweet.user.name,
+                "screen_name": tweet.user.screen_name,
                 "location": tweet.user.location,
                 "description": tweet.user.description,
                 "friends": tweet.user.friends_count,
@@ -131,7 +133,7 @@ for ix in range(500):
             )
 
     final_data.append(tweet_json_data)
-    time.sleep(1)
+    time.sleep(5)
 
 
 # writing the tweets into a json file
