@@ -11,7 +11,9 @@ import {
   Container,
   Heading,
   AbsoluteCenter,
+  Button,
 } from "@chakra-ui/react";
+import { GrLinkNext,GrLinkPrevious } from "react-icons/gr";
 
 function App() {
   const [data, setData] = useState([]);
@@ -24,12 +26,13 @@ function App() {
     })();
   }, []);
 
-console.log("Helolo",tweets,data);
   return (
     <>
     <Box w="100%" position="absolute" backgroundColor={"whiteAlpha.900"}> 
       <Header />
+      
       <GridLayout/>
+      
     </Box>
     </>
   );

@@ -8,8 +8,8 @@ const Cards=(props: {
     tweetContent: string | undefined;
     profileImage: string | undefined;
     screenName: string | undefined;
-    mediaURL: string | undefined;
-    // video: string | undefined;
+    mediaURL: any[] | string | undefined;
+    video:  any[] |string | undefined;
     likeCount: number | undefined;
     retweet: number | undefined;
 }
@@ -17,12 +17,11 @@ const Cards=(props: {
 
     return (
         <div id="root">
-            <Card maxW='md' margin="10">
+            <Card maxW='md' margin="10" maxH="md" overflow={"scroll"}>
                 <CardHeader>
                     <Flex>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                             <Avatar name={props.profileImage} src={props.profileImage} />
-
                             <Box>
                                 <Heading size='sm'>{props.userName}</Heading>
                                 <Text>@{props.screenName}</Text>
@@ -34,12 +33,19 @@ const Cards=(props: {
                     <Text>
                         {props.tweetContent}
                     </Text>
-                    {/* <Image
+                    {props.mediaURL && props.mediaURL.length>0 && props.video?.length==null ? 
+                    <Image
                         objectFit='cover'
                         src={props.mediaURL}
                         alt={props.mediaURL}
-                    /> */}
-                    {/* <video src={props.video} width="cover" height="cover" controls></video> */}
+                    />
+                    : null}
+                    {   props.video && props.video.length>0 ?
+                        <video src={props.video} width="cover" height="300px" controls></video>
+                        :null
+                    }
+                    
+                    
                 </CardBody>
                 <CardFooter
                     flexWrap='wrap'
