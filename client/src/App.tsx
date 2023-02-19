@@ -24,9 +24,10 @@ function App() {
     })();
   }, []);
 
+console.log("Helolo",tweets,data);
   return (
     <>
-    <Box w="100%" position="absolute" backgroundColor={"whiteAlpha.900"}>
+    <Box w="100%" position="absolute" backgroundColor={"whiteAlpha.900"}> 
       <Header />
       <GridLayout/>
     </Box>

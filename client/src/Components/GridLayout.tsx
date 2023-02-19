@@ -7,31 +7,35 @@ import Cards from '../Components/Card'
 
 const GridLayout = () => {
   return(
-    <Box alignItems="center">
+    <div>
       {data.map(each_title=>{
       return(
         <>
-        <Heading>{each_title.title_of_article}</Heading>
+        <Heading><Center><a>{each_title.title_of_article}</a></Center></Heading>
+        <SimpleGrid columns={4}>
           {each_title.tweets.map(tweet=>{
             return(
-              <SimpleGrid>
+              
                 <Cards 
                   userName={tweet.user_info.name}
                   tweetContent={tweet.tweet_text} 
                   profileImage={tweet.user_info.profile_image_url} 
                   screenName={tweet.user_info.screen_name}
                   mediaURL={tweet.tweet_url}
+                  likeCount={tweet.tweet_likecount}
+                  retweet={tweet.tweet_retweetcount}
                   // video={tweet.tweet_url}
                 />
-            </SimpleGrid>
+            
             )
           }
           )}
+          </SimpleGrid>
         </> 
       )
     })
   }
-    </Box>
+    </div>
     
     
   )

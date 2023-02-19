@@ -1,6 +1,7 @@
-import {Card, IconButton} from "@chakra-ui/react";
+import {Button, Card, CardFooter, Divider, Icon} from "@chakra-ui/react";
 import {Avatar, Box, CardBody, CardHeader, Flex, Heading,Text,Image } from "@chakra-ui/react";
-
+import { FcLike } from "react-icons/fc"
+import {FaRetweet} from "react-icons/fa"
 
 const Cards=(props: { 
     userName: string | undefined,
@@ -9,6 +10,8 @@ const Cards=(props: {
     screenName: string | undefined;
     mediaURL: string | undefined;
     // video: string | undefined;
+    likeCount: number | undefined;
+    retweet: number | undefined;
 }
     )=>{
 
@@ -38,6 +41,12 @@ const Cards=(props: {
                     /> */}
                     {/* <video src={props.video} width="cover" height="cover" controls></video> */}
                 </CardBody>
+                <CardFooter
+                    flexWrap='wrap'
+                 >
+                    <Button variant='ghost' leftIcon={<FcLike/>} >{props.likeCount}</Button>
+                    <Button variant='ghost' leftIcon={<FaRetweet/>}>{props.retweet}</Button>
+                </CardFooter>
 
             </Card>
         </div>
