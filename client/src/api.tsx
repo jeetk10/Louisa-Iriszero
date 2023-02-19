@@ -10,6 +10,16 @@ async function getNews() {
   }
 }
 
+async function getTweets() {
+  try {
+    const res = await axios.get('http://localhost:5000/tweets');
+    console.log(res);
+    return await res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 
-export default getNews
+
+export default {getNews,getTweets};

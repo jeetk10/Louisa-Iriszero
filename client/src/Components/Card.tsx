@@ -1,10 +1,14 @@
 import {Card, IconButton} from "@chakra-ui/react";
-import {Avatar, Box, CardBody, CardHeader, Flex, Heading,Text } from "@chakra-ui/react";
-import React from "react";
+import {Avatar, Box, CardBody, CardHeader, Flex, Heading,Text,Image } from "@chakra-ui/react";
+
 
 const Cards=(props: { 
     userName: string | undefined,
     tweetContent: string | undefined;
+    profileImage: string | undefined;
+    screenName: string | undefined;
+    mediaURL: string | undefined;
+    // video: string | undefined;
 }
     )=>{
 
@@ -14,12 +18,12 @@ const Cards=(props: {
                 <CardHeader>
                     <Flex>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
-                            <Avatar name={props.userName} src="" />
+                            <Avatar name={props.profileImage} src={props.profileImage} />
 
                             <Box>
                                 <Heading size='sm'>{props.userName}</Heading>
+                                <Text>@{props.screenName}</Text>
                             </Box>
-                            
                         </Flex>
                     </Flex>
                 </CardHeader>
@@ -27,6 +31,12 @@ const Cards=(props: {
                     <Text>
                         {props.tweetContent}
                     </Text>
+                    {/* <Image
+                        objectFit='cover'
+                        src={props.mediaURL}
+                        alt={props.mediaURL}
+                    /> */}
+                    {/* <video src={props.video} width="cover" height="cover" controls></video> */}
                 </CardBody>
 
             </Card>

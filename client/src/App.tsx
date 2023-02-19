@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import getNews from "./api";
 import GridLayout from "./Components/GridLayout";
 import Header from "./Components/Header";
+import getTweets from "./api";
 
 import {
   Center,
@@ -14,18 +15,22 @@ import {
 
 function App() {
   const [data, setData] = useState([]);
+  const [tweets, setTweets] =useState([]);
 
   useEffect(() => {
     (async () => {
       setData(await getNews());
+      setTweets(await getTweets());
     })();
   }, []);
 
   return (
-    <Box w="100%" position="absolute">
-      {/* <Header /> */}
-      <GridLayout />
+    <>
+    <Box w="100%" position="absolute" backgroundColor={"whiteAlpha.900"}>
+      <Header />
+      <GridLayout/>
     </Box>
+    </>
   );
 }
 
