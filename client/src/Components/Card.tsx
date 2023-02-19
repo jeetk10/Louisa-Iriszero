@@ -17,7 +17,7 @@ const Cards=(props: {
 
     return (
         <div id="root">
-            <Card maxW='md' margin="10" maxH="md" overflow={"scroll"}>
+            <Card maxW='md' margin="10" maxH="md" overflowY={"scroll"}>
                 <CardHeader>
                     <Flex>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
