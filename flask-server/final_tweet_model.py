@@ -34,11 +34,11 @@ final_data = []
 pattern = re.compile(r"\d+\.\s*(.*)")  # matches one or more digits followed by a period, optionally followed by
 # whitespace (the \s*), and then captures any character except a newline in a group (the (.*)).
 n=10
-for i in range(0,10,n):
+for i in range(0,50,n):
     batch = dtset[i:i+n]
     for ix in range(len(batch)):
         prompt = """Give 2 most relevant topics based on
-        following news headline and be specific to the headline: {}""".format(
+        following news headline : {}""".format(
             dtset[ix]["title"]
         )
 
@@ -73,8 +73,8 @@ for i in range(0,10,n):
                 recent_tweets = tweepy.Cursor(
                     twitter_api.search_tweets, q=query_string_noRetweets, lang="en",tweet_mode="extended",include_entities=True
                 ).items(
-                    8
-                )  # get 8 tweets per article
+                    9
+                )  # get 9 tweets per article
                 break
             except tweepy.TweepError as e:
                 print(f"Tweepy error: {e}")
