@@ -1,41 +1,32 @@
+import { useState, useEffect } from "react";
+
 import {
   Button,
   Center,
-  Grid,
+  Flex,
   Link,
-  GridItem,
+  Heading,
   SimpleGrid,
   Spacer,
-  LinkBox,
 } from "@chakra-ui/react";
-import { Box, Container } from "@chakra-ui/react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Flex,
-  Avatar,
-  Heading,
-  Text,
-  IconButton,
-  Image,
-} from "@chakra-ui/react";
-import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
-import data from "../../../flask-server/data/tweets.json";
-import Cards from "../Components/Card";
 
-const image = data.map((each_title) => {
-  return each_title.tweets.map((video) => {
-    return video.tweet_images_url;
-  });
-});
-console.log(image);
+import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
+
+import Cards from "../Components/Card";
+import { getTweets } from "../api";
+
 const GridLayout = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      setData(await getTweets());
+    })();
+  }, []);
+
   return (
     <div>
       {data.map((each_title) => {
-        return each_title.tweets && each_title.tweets.length > 0 ? ( //Does not return the news articles which contain 0 tweets
+        return each_title["tweets"] && each_title["tweets"].length > 0 ? ( //Does not return the news articles which contain 0 tweets
           <>
             <Flex marginTop={10}>
               <Button
@@ -75,7 +66,7 @@ const GridLayout = () => {
                       },
                     }}
                   >
-                    {each_title.title_of_article}
+                    {each_title["title_of_article"]}
                   </Link>
                 </Center>
               </Heading>
@@ -91,7 +82,7 @@ const GridLayout = () => {
               </Button>
             </Flex>
             <SimpleGrid columns={4}>
-              {each_title.tweets.map((tweet) => {
+              {each_title["tweets"].map((tweet) => {
                 return (
                   <Cards
                     userName={tweet.user_info.name}
