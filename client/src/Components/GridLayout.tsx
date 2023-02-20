@@ -53,6 +53,12 @@ const GridLayout = () => {
               >
                 <Center
                   textAlign="justify"
+                  sx={{
+                    transition: "box-shadow 0.3s",
+                    "&:hover": {
+                      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.25)",
+                    },
+                  }}
                   px="0.5em"
                   pb="0.2em"
                   pt="0.15em"
@@ -62,11 +68,10 @@ const GridLayout = () => {
                     sx={{
                       textDecoration: "none",
                       color: "gray.800",
-                      transition: "box-shadow 0.3s",
+
                       "&:hover": {
                         textDecor: "none",
                         color: "gray.600",
-                        boxShadow: "0 1px 2px rgba(0, 0, 0, 0.25)",
                       },
                     }}
                   >
