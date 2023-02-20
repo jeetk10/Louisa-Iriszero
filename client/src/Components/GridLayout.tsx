@@ -14,9 +14,10 @@ import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 
 import Cards from "../Components/Card";
 import { getTweets } from "../api";
+import { Tweet, Tweets } from "../types";
 
 const GridLayout = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Tweets[]>([]);
   useEffect(() => {
     (async () => {
       setData(await getTweets());
