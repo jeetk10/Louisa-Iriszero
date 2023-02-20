@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
 
 import getNews from "./api";
-import GridLayout from "./Components/GridLayout";
-import Header from "./Components/Header";
 import getTweets from "./api";
-
-import {
-  Center,
-  Box,
-  Container,
-  Heading,
-  AbsoluteCenter,
-  Button,
-} from "@chakra-ui/react";
-import { GrLinkNext,GrLinkPrevious } from "react-icons/gr";
 
 function App() {
   const [data, setData] = useState([]);
-  const [tweets, setTweets] =useState([]);
+  const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -27,14 +17,11 @@ function App() {
   }, []);
 
   return (
-    <>
-    <Box w="100%" position="absolute" backgroundColor={"whiteAlpha.900"}> 
-      <Header />
-      
-      <GridLayout/>
-      
-    </Box>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
