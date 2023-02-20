@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-async function getNews() {
+export async function getNews() {
   try {
-    const res = await axios.get('http://localhost:5000/news');
+    const res = await axios.get("http://localhost:5000/news");
     console.log(res);
     return await res.data;
   } catch (error) {
@@ -10,9 +10,9 @@ async function getNews() {
   }
 }
 
-async function getTweets() {
+export async function getTweets() {
   try {
-    const res = await axios.get('http://localhost:5000/tweets');
+    const res = await axios.get("http://localhost:5000/tweets");
     console.log(res);
     return await res.data;
   } catch (error) {
@@ -20,6 +20,9 @@ async function getTweets() {
   }
 }
 
+const api = {
+  getNews,
+  getTweets,
+};
 
-
-export default {getNews,getTweets};
+export default api;
