@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 import json
 
@@ -16,7 +16,15 @@ def news():
 
 @app.route("/tweets")
 def tweets():
-    return tweet_data
+    index = request.args.get("index")
+    if index:
+        news_object = tweet_data[int(index)]
+        if news_object:
+            return news_object
+        else:
+            return f"No news object found with index {index}", 404
+    else:
+        return tweet_data
 
 
 if __name__ == "__main__":
