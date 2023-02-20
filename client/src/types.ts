@@ -1,3 +1,10 @@
+export interface VideoVariants {
+    bitrate: number;
+    content_type: string;
+    url: string;
+}
+
+
 export interface Tweet {
     tweet_id: string;
     tweet_created_at: string,
@@ -5,8 +12,20 @@ export interface Tweet {
     hashtags: string[];
     tweet_url: string;
     tweet_images_url: [];
-    tweet_video_info: {};
-    user_info: {};
+    tweet_video_info: {
+        aspect_ratio: number[];
+        duration_millis: number;
+        variants: VideoVariants[];
+    };
+    user_info: {
+        name: string;
+        screen_name: string;
+        profile_image_url: string;
+        location: string;
+        description: string;
+        friends: number;
+        followers: number;
+    };
     tweet_retweetcount: number;
     tweet_likecount: number;
     tweet_score: number;
