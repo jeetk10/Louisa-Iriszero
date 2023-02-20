@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 import {
   Button,
   Center,
@@ -14,7 +14,7 @@ import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 
 import Cards from "../Components/Card";
 import { getTweets } from "../api";
-import { Tweets } from "../types";
+import { Tweet, Tweets } from "../types";
 
 const GridLayout = () => {
   const [data, setData] = useState<Tweets[]>([]);
@@ -24,21 +24,49 @@ const GridLayout = () => {
     })();
   }, []);
 
+  var currentId=0
+  async function handlePreviousClick(){
+    currentId=currentId-1
+    let url="http://localhost:5000/tweets?index="+currentId
+    var res=await axios.get(url)
+    console.log(res.data)
+  }
+  async function handleNextClick(){
+    currentId=currentId+1
+    let url="http://localhost:5000/tweets?index="+currentId
+    var res=await axios.get(url)
+    console.log(res.data)
+  }
   return (
-    <div>
-      {data.map((each_title) => {
-        return each_title["tweets"] && each_title["tweets"].length > 0 ? ( //Does not return the news articles which contain 0 tweets
-          <>
-            <Flex marginTop={10}>
+    <>
+    <       Flex>
               <Button
                 variant="outline"
                 mx="2em"
                 colorScheme="blue"
                 leftIcon={<GrLinkPrevious />}
+                onClick={handlePreviousClick}
               >
                 Previous
               </Button>
               <Spacer />
+              <Button
+                variant="outline"
+                mx="2em"
+                colorScheme="blue"
+                leftIcon={<GrLinkNext />}
+                onClick={handleNextClick}
+              >
+                Next
+              </Button>
+            </Flex>
+    <div>
+      {
+      data.map((each_title) => {
+        return each_title["tweets"] && each_title["tweets"].length > 0 ? ( //Does not return the news articles which contain 0 tweets
+          <>
+            <Flex marginTop={10}>
+              <Spacer/>
               <Heading
                 boxShadow="lg"
                 bgGradient="linear(to-t,gray.100,gray.200)"
@@ -69,18 +97,9 @@ const GridLayout = () => {
                   >
                     {each_title["title_of_article"]}
                   </Link>
-                </Center>
+                </Center> 
               </Heading>
               <Spacer />
-              {/* onClick={nextPage()} */}
-              <Button
-                variant="outline"
-                mx="2em"
-                colorScheme="blue"
-                leftIcon={<GrLinkNext />}
-              >
-                Next
-              </Button>
             </Flex>
             <SimpleGrid columns={4}>
               {each_title["tweets"].map((tweet) => {
@@ -106,11 +125,9 @@ const GridLayout = () => {
         ) : null;
       })}
     </div>
+    </>
   );
 
-  //  async function nextPage(){
-  //   return(window.location.replace(""))
-  // }
 };
 
 export default GridLayout;
